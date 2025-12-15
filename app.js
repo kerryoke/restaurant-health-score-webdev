@@ -69,13 +69,16 @@ const displayResults = (results) => {
   const htmlString = results
     .map((result) => {
       return `
-      <li class="result">
+      <div class="result">
         <h3>${result.attributes.EstablishmentName}</h3>
-        <p>Location: ${result.attributes.Address}</p>
-        <p>Grade: ${result.attributes.Grade}</p>
-        <p>Score: ${result.attributes.score}</p>
-        <p>Date of inspection: ${result.attributes.InspectionDate}</p>
-      </li>
+        <ul>
+          <li>Location: ${result.attributes.Address}</li>
+          <li>Grade: ${result.attributes.Grade}</li>
+          <li>Score: ${result.attributes.score}</li>
+          <li>Date of inspection: ${result.attributes.InspectionDate}</li>
+        </ul>
+        
+      </div>
     `;
     })
     .join('');
@@ -83,6 +86,29 @@ const displayResults = (results) => {
 };
 
 getData();
+
+
+
+//Implement a chart/graph that visualizes percentage of grades
+//get number of A's, B's, C's results (filter results such that ...etc)
+
+//TOMORROW: add CSS and media queries
+// and README
+// then ask mentor to make sure it's meeting all requirements
+
+
+
+
+
+
+
+
+
+
+
+
+
+
 
 
 // //FIND ALL TYPE DESCRIPTIONS

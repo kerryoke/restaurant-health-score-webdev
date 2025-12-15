@@ -7,9 +7,6 @@
     <title>Document</title>
 </head>
 <body>
-    <h1>Restaurant Inspection Scores</h1>
-
-    
 
     <nav class="navbar">
         <ul>
@@ -18,16 +15,17 @@
         </ul>
     </nav>
 
+    <h1>Restaurant Inspection Scores</h1>
+
 
     <main>
-        <h3>How to use</h3>
-        <p>This paragraph will describe how to use the search funtion.</p>
+        
+        <p>This website allows you to search for restaurants in the Louisville Metro by name and/or grade. </p>
 
-        <p>This will be the location of the search button. The search button will open a new page with the results displayed(?)</p>
-
+        <h2>Search for establishment:</h2>
 
         <div class="container">
-            <h2>Search for establishment</h1>
+            
             <div id="searchWrapper">
                 <input
                     type="text"
@@ -41,11 +39,14 @@
                     type="text"
                     name="searchBar"
                     id="gradeSearchBar"
-                    placeholder="Search by grade (A, B, C, etc)"
+                    placeholder="Search by grade (A, B, C)"
                 />    
             </div>
-            <ul id="resultList"></ul>
+
+            <button class="btn" type="button" onclick="getData()">Clear Search</button>
+            
         </div>
+        <ul id="resultList"></ul>
 
 
 

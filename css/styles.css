@@ -1,0 +1,77 @@
+* {
+    
+    color: #343E3D;
+}
+
+h1 {
+    font-family: Arial, sans-serif;
+    text-align: center;
+    background-color: #AEDCC0;
+    padding: .5em;
+    border-radius: 20px;
+}
+
+.navbar ul{
+    list-style-type: none;
+    display: flex;
+    text-align: center;
+
+}
+
+.navbar li a {
+    display: block; 
+    color: black; 
+    text-align: center; 
+    padding: 14px 16px; 
+    text-decoration: none; 
+}
+
+nav li a:hover {
+    background-color: #565454;
+    color: white;
+}
+
+.container {
+    display:flex;
+ 
+}
+
+.container #nameSearchBar{
+    margin: 10px;
+    margin-top: 1px;
+}
+
+.container #gradeSearchBar{
+    margin: 10px;
+    margin-top: 1px;
+}
+
+.container .btn{
+    margin: 10px;
+    margin-top: 1px;
+}
+
+
+#resultList p {
+    margin: 10px;
+    
+    padding: 1em;
+}
+
+#resultList h3 {
+    font-family: Arial, sans-serif;
+    padding-top: 10px;
+}
+
+#resultList ul {
+    margin: 10px;
+
+}
+
+#resultList li {
+    list-style-type: none;
+    
+}
+
+
+/* media queries */
