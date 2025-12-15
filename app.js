@@ -26,11 +26,11 @@ const getData = async () => {
       return result.attributes.Ins_TypeDesc === "REGULAR";
     })
     displayResults(regularInspectionsOnly);
+    // typeDescriptions(regularInspectionsOnly);
   } catch (err) {
       console.error(err);
   }
 };
-
 
 
 
@@ -55,4 +55,24 @@ const displayResults = (results) => {
 getData();
 
 
+// //find all type descriptions
+// const typeDescriptions = (results) => {
+//   const descriptions = results.map((result) => {
+//     return result.attributes.TypeDescription;
+    
+//   })
+//   const uniqueDescriptions = [...new Set(descriptions)];
+//   console.log(uniqueDescriptions);
+// }
 
+// 0: "FOOD SERVICE"
+// 1: "SCHOOL CAFETERIA OR FOOD SERVICE"
+// 2: "PRE-PACKAGED RETAIL"
+// 3: "FOOD SERVICE (HOSPITAL / NURSING HOME"
+// 4: "FOOD SERVICE (DAY CARE / CHILD CARE CENTER"
+// 5: "SUPERMARKET WITH PROCESSING"
+// 6: "RETAIL-FOOD  10,000 SQ FT OR LESS"
+// 7: "RETAIL-FOOD  10,001 SQ FT OR OVER"
+// 8: "RETAIL WITH LIMITED SERVICE"
+// 9: "STATIONARY RESTRICTED CONCESSON"
+// length : 10
