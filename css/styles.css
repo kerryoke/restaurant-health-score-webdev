@@ -75,3 +75,18 @@ nav li a:hover {
 
 
 /* media queries */
+@media (min-width: 500px) and (max-width: 768px){
+    h1, h2{
+        text-align: center;
+    }
+
+    p{
+        text-align: center;
+    }
+
+    .container{
+        justify-content: center;
+    }
+
+    
+}
