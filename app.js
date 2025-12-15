@@ -1,20 +1,50 @@
 const resultList = document.getElementById('resultList');
-const searchBar = document.getElementById('searchBar');
+const nameSearchBar = document.getElementById('nameSearchBar');
+const gradeSearchBar = document.getElementById('gradeSearchBar');
 let allResults = [];
 let regularInspectionsOnly = [];
+let nameSearchString = '';
+let gradeSearchString = '';
 
 
 
+nameSearchBar.addEventListener('keyup', (e) => {
 
-searchBar.addEventListener('keyup', (e) => {
-  const searchString = e.target.value.toLowerCase();
-
-  const filteredResults = allResults.features.filter((result) => {
-    return result.attributes.EstablishmentName.toLowerCase().includes(searchString);
-  });
+  const filteredResults = searchResults(e.target.value.toLowerCase(), null);
 
   displayResults(filteredResults);
 })
+
+gradeSearchBar.addEventListener('keyup', (e) => {
+
+  const gradeResults = searchResults(null, e.target.value.toLowerCase());
+
+  displayResults(gradeResults);
+})
+
+
+
+const searchResults = (nameValue, gradeValue) => {
+  if (!!nameValue){
+    nameSearchString = nameValue;
+  }
+  if (!!gradeValue){
+    gradeSearchString = gradeValue;
+  }
+
+  return allResults.features.filter((result) => {
+    const filterByName = result.attributes.EstablishmentName.toLowerCase().includes(nameSearchString);
+    const filterByGrade = !!result.attributes.Grade
+      && result.attributes.Grade.toLowerCase().includes(gradeSearchString);
+    const nameHasValue = nameSearchString.length > 0;
+    const gradeHasValue = gradeSearchString.length > 0;
+
+    return (nameHasValue ? filterByName : true) && (gradeHasValue ? filterByGrade : true)
+           
+  }
+
+  )}
+
 
 
 const getData = async () => {
@@ -55,7 +85,7 @@ const displayResults = (results) => {
 getData();
 
 
-// //find all type descriptions
+// //FIND ALL TYPE DESCRIPTIONS
 // const typeDescriptions = (results) => {
 //   const descriptions = results.map((result) => {
 //     return result.attributes.TypeDescription;
