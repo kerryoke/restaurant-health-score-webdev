@@ -1,7 +1,7 @@
 const resultList = document.getElementById('resultList');
 const searchBar = document.getElementById('searchBar');
 let allResults = [];
-
+let regularInspectionsOnly = [];
 
 
 
@@ -22,18 +22,19 @@ const getData = async () => {
   try {
     const result = await fetch(url);
     allResults = await result.json();
-    displayResults(allResults.features);
+    regularInspectionsOnly = allResults.features.filter((result) => {
+      return result.attributes.Ins_TypeDesc === "REGULAR";
+    })
+    displayResults(regularInspectionsOnly);
   } catch (err) {
       console.error(err);
   }
 };
 
 
-// limit results to regular inspections only: (not complaints, follow-ups, etc);
-// const regularInspections = 
 
 
-
+// clean up date of inspection display
 const displayResults = (results) => {
   const htmlString = results
     .map((result) => {
@@ -43,6 +44,7 @@ const displayResults = (results) => {
         <p>Location: ${result.attributes.Address}</p>
         <p>Grade: ${result.attributes.Grade}</p>
         <p>Score: ${result.attributes.score}</p>
+        <p>Date of inspection: ${result.attributes.InspectionDate}</p>
       </li>
     `;
     })
