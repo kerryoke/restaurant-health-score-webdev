@@ -64,7 +64,7 @@ const getData = async () => {
 
 
 
-// clean up date of inspection display
+
 const displayResults = (results) => {
   const htmlString = results
     .map((result) => {
@@ -72,10 +72,10 @@ const displayResults = (results) => {
       <div class="result">
         <h3>${result.attributes.EstablishmentName}</h3>
         <ul>
-          <li>Location: ${result.attributes.Address}</li>
-          <li>Grade: ${result.attributes.Grade}</li>
-          <li>Score: ${result.attributes.score}</li>
-          <li>Date of inspection: ${result.attributes.InspectionDate}</li>
+          <li><b>Location:</b> ${result.attributes.Address}</li>
+          <li><b>Grade:</b> ${result.attributes.Grade}</li>
+          <li><b>Score:</b> ${result.attributes.score}</li>
+          <li><b>Date of inspection:</b> ${result.attributes.InspectionDate.split(' ')[0]}</li>
         </ul>
         
       </div>
@@ -85,20 +85,16 @@ const displayResults = (results) => {
   resultList.innerHTML = htmlString;
 };
 
+
+function clearSearch(){
+  nameSearchString = '';
+  gradeSearchString = '';
+  nameSearchBar.value = '';
+  gradeSearchBar.value = '';
+  getData();
+}
+
 getData();
-
-
-
-//Implement a chart/graph that visualizes percentage of grades
-//get number of A's, B's, C's results (filter results such that ...etc)
-
-//TOMORROW: add CSS and media queries
-// and README
-// then ask mentor to make sure it's meeting all requirements
-
-
-
-
 
 
 

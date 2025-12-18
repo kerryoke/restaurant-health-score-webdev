@@ -8,7 +8,7 @@ h1 {
     text-align: center;
     background-color: #AEDCC0;
     padding: .5em;
-    border-radius: 20px;
+    border-radius: 10px;
 }
 
 .navbar ul{
@@ -65,11 +65,28 @@ nav li a:hover {
 
 #resultList ul {
     margin: 10px;
+    background-color: #d7edfe;
+    padding: 1em;
+    border-radius: 10px;
+    max-width: fit-content;
+    
 
 }
 
 #resultList li {
     list-style-type: none;
+    font-family:Cambria, Cochin, Georgia, Times, 'Times New Roman', serif;
+    
+}
+
+.aboutme-container{
+    background-color: #ebf6fe;
+    padding: .5em;
+    border-radius: 10px;
+}
+
+.aboutme-container p{
+    font-family: Georgia, 'Times New Roman', Times, serif;
     
 }
 
