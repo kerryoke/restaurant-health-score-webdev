@@ -16,12 +16,16 @@ This website was created to pull data from the [Louisville Metro Open Data API](
   
 
 ## To view project:
+This project was created using Visual Studio Code and requires the Live Server extension.
+To access the extension:
+1. Open VS Code.
+2. Go to the "Extensions" page or press `CTRL+SHIFT+X`.
+3. Search for "Live Server" and install the extension by Ritwick Dey. 
 
+Once extension is installed:
 1. Clone project.
-2. CLick "Go Live" to run live server locally.
-3. The site should load automatically.
-
-Troubleshooting:
+2. Click the "Go Live" button on the blue status bar at the bottom right to run live server locally.
+3. The site should run automatically.
 If the data doesn't load you may need to change the query URL in the `getData()` function in app.js. To do this, copy and paste the query URL found [here](https://louisville-metro-opendata-lojic.hub.arcgis.com/datasets/LOJIC::louisville-metro-ky-restaurant-inspection-scores/api).
 
 ## Limitations and stretch goals:
